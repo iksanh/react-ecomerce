@@ -3,10 +3,7 @@ import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 
 import Authentication from "./routes/authentication/authentication.component";
-
-const Shoep = () => {
-  return <h1>Selamat datang di shoop</h1>;
-};
+import Shop from "./routes/shop/shop.component";
 
 const App = () => {
   return (
@@ -17,7 +14,7 @@ const App = () => {
       {/* membuat nested route  */}
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="shop" element={<Shoep />} />
+        <Route path="shop" element={<Shop />} />
         <Route path="auth" element={<Authentication />} />
       </Route>
     </Routes>

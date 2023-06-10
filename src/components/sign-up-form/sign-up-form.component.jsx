@@ -1,12 +1,11 @@
-import "./sign-up-form.styles.scss";
 import { useState } from "react";
-
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utlis";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
+import "./sign-up-form.styles.scss";
 
 const defaultFormFields = {
   displayName: "",
@@ -35,20 +34,17 @@ const SignUpForm = () => {
         email,
         password
       );
+
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
-      // console.log(response);
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("cannot create user, user elready in use");
       }
       console.log("user creation account ancountered an error", error);
     }
-
-    // console.log(email, password);
   };
 
-  console.log(formFields);
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
@@ -95,9 +91,6 @@ const SignUpForm = () => {
           value={confirmPassword}
         />
 
-        {/* <Button type="submit" buttonType="google">
-          Simpan
-        </Button> */}
         <Button type="submit">Simpan</Button>
       </form>
     </div>
