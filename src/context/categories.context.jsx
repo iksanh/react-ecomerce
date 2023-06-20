@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 // addCollectionAndDocuments for add  helper function for add data to firestore
 // import { addCollectionAndDocuments, getCategoriesAndDocuments } from "../utils/firebase/firebase.utlis";
-import { getCategoriesAndDocuments } from "../utils/firebase/firebase.utlis";
+import { getCategoriesAndDocuments } from "../utils/firebase/firebase.utils";
 
 export const CategoriesContext = createContext({
   categoriesMap: {},
